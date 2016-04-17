@@ -5,6 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic'])
 
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -21,23 +22,25 @@ angular.module('starter', ['ionic'])
       StatusBar.styleDefault();
     }
     
-	$scope.options = {
-	  loop: true,
-	  effect: fade,
-	  speed: 500,
-	}
-	$scope.data = {};
-	$scope.$watch('data.slider', function(nv, ov) {
-	  $scope.slider = $scope.data.slider;
-	})    
+
     
   });
 })
 
 
 .controller('SlidesCtrl', function($scope) {
+    $scope.colors = ['blue', 'red', 'green'];
 
+	$scope.options = {
+	  loop: true,
+	  speed: 500,
+	  autoplay: 1000,
+	}
+	$scope.data = {};
+	$scope.$watch('data.slider', function(nv, ov) {
+	  $scope.slider = $scope.data.slider;
+	})    
 
-})
+});
 
 
