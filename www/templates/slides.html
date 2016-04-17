@@ -1,0 +1,11 @@
+<ion-pane>
+
+	<ion-slides  options="options" slider="data.slider">
+	  <ion-slide-page ng-repeat="color in colors">
+	    <div class="box {{color}}"><h1>{{color}}:{{$index}}</h1></div>
+	    <img src='img/pic{{$index+1}}.jpg'>
+	  </ion-slide-page>
+
+	</ion-slides>
+
+</ion-pane>

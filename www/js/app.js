@@ -28,13 +28,34 @@ angular.module('starter', ['ionic'])
 })
 
 
+.config(function($stateProvider, $urlRouterProvider) {
+
+  $stateProvider
+
+  .state('home', {
+    url: '/home',
+    templateUrl: 'templates/home.html'
+  })
+	.state('slides', {
+		url:'/slides',
+		controller: 'SlidesCtrl',
+		templateUrl: 'templates/slides.html'
+	});
+
+
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/home');
+
+})
+
+
 .controller('SlidesCtrl', function($scope) {
     $scope.colors = ['blue', 'red', 'green'];
 
 	$scope.options = {
 	  loop: true,
 	  speed: 500,
-	  autoplay: 1000,
+	  //autoplay: 1000,
 	}
 	$scope.data = {};
 	$scope.$watch('data.slider', function(nv, ov) {
